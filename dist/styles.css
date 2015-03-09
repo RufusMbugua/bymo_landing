@@ -5945,8 +5945,12 @@ a.btn:hover {
   box-shadow: 0 0 1px #e62020;
   border-color: #e62020; }
 
-a.red, h5.red {
+a.red, h4.red {
   background: none;
   color: #e62020; }
+
+h4.red {
+  text-align: center;
+  padding: 2%; }
 
 /*# sourceMappingURL=styles.css.map */

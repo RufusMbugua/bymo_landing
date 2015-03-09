@@ -334,7 +334,11 @@ a.btn:hover{
     box-shadow: 0 0 1px $red;
     border-color: $red;
 }
-a.red,h5.red{
+a.red,h4.red{
     background:none;
     color:$red;
+}
+h4.red{
+  text-align:center;
+  padding:2%;
 }

@@ -164,7 +164,7 @@ angular.module("../app/partials/directives/head.html", []).run(["$templateCache"
 
 angular.module("../app/partials/directives/header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../app/partials/directives/header.html",
-    "<nav class=\"navbar navbar-default\">\n" +
+    "<nav style=\"width:90%\" class=\"navbar navbar-default\">\n" +
     "    <div class=\"container-fluid\">\n" +
     "        <!-- Brand and toggle get grouped for better mobile display -->\n" +
     "        <div class=\"navbar-header\">\n" +
@@ -180,7 +180,7 @@ angular.module("../app/partials/directives/header.html", []).run(["$templateCach
     "\n" +
     "        <!-- Collect the nav links, forms, and other content for toggling -->\n" +
     "        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
-    "            <h5>The Buymore Card</h5>\n" +
+    "            <h4 class=\"red\">The Buymore Card</h4>\n" +
     "        </div><!-- /.navbar-collapse -->\n" +
     "    </div><!-- /.container-fluid -->\n" +
     "</nav>\n" +
