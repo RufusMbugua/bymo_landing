@@ -222,6 +222,16 @@ angular.module("../app/partials/pages/home.html", []).run(["$templateCache", fun
     "  <div style=\"width:100%\">\n" +
     "    <img src=\"assets/images/Buymore-Card.png\" class=\"img-rounded\" style=\"margin:0 25%\">\n" +
     "  </div>\n" +
+    "  <div class=\"row\" style=\"margin-top:5%\">\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <form action=\"\">\n" +
+    "        <div class=\"form-group col-md-10\">\n" +
+    "          <input type=\"text\" class=\"form-control\" placeholder=\"Enter Your Email Address Here\">\n" +
+    "        </div>\n" +
+    "        <a type=\"button\" class=\"red col-md-2 btn btn-success btn-sm\" ng-click=\"\">Sign Up for Newsletter</a>\n" +
+    "      </form>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
     "</section>\n" +
     "");
 }]);

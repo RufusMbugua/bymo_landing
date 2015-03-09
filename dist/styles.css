@@ -5953,4 +5953,15 @@ h4.red {
   text-align: center;
   padding: 2%; }
 
+a.red {
+  background: #e62020;
+  border: none;
+  padding: 5px 10px !important;
+  color: white !important;
+  border-radius: 2px; }
+
+a.red:hover {
+  background: #000 !important;
+  color: #e62020 !important; }
+
 /*# sourceMappingURL=styles.css.map */
