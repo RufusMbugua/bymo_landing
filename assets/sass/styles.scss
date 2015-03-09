@@ -1,0 +1,340 @@
+@import "bootstrap";
+@import "typeplate/styles";
+
+$red:#e62020;
+$black: #000;
+$grey:#b9b9b9;
+body{
+    overflow-x: hidden;
+    font-family:OpenSansRegular;
+}
+#about{
+    background: url("../assets/images/Buymore-Brand-Ambassador.png") no-repeat center fixed;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    position: relative !important;
+}
+#how,#benefits,#requirements,#testimonials{
+    background: url("../assets/images/Buymore-Brand-Ambassador_fade.png") no-repeat center fixed;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    position: relative !important;
+}
+ol{
+    list-style: none;
+    li{
+        margin-bottom:2em;
+        div{
+            color:white;
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+            padding:5px;
+            text-align: center;
+            background: $black;
+            vertical-align: middle;
+            display: inline-block;
+            margin-right:10px;
+        }
+    }
+}
+.full-page{
+    padding:10% 10%;
+    height:100%;
+}
+.content{
+    height:100%;
+    margin:0;
+    .row{
+        margin-bottom:1em;
+    }
+    .banner-text{
+        @extend .col-md-6;
+         div.red,div.black{
+            width:50%;
+        }
+    }
+    .instructions{
+        @extend .col-md-6;
+        h6{
+            text-align: center;
+            color:$red;
+            font-weight: bolder;
+            width:84%;
+            border-bottom: 2px solid $red;
+            padding-bottom:0.5em;
+        }
+
+    }
+    .tag-line.center{
+        .inner{
+            text-align: left;
+        }
+    }
+    .tag-line{
+        .card{
+            @extend .col-md-12;
+            padding:0;
+            img{
+                margin:0 auto;
+                margin-bottom: 2em;
+            }
+        }
+
+        .inner{
+            text-align: right;
+        }
+        @extend .col-md-6;
+        font-size:2em;
+        i{
+            color:$grey;
+        }
+        i:first-child{
+            padding-right:2%;
+        }
+        i:last-child{
+            padding-left:2%;
+        }
+        a{
+            font-size:0.5em !important;
+            text-decoration: underline;
+            color: $red;
+        }
+        a:hover{
+            color:$black;
+        }
+    }
+    .redirect{
+        @extend .col-md-6;
+    }
+}
+
+
+header{
+    margin:0 !important;
+    width:100%;
+    height:15%;
+    color: black !important;
+    @extend .row;
+    border-bottom:5px solid $red;
+    position: fixed;
+    z-index:1;
+
+    #logo{
+        @extend .col-md-2;
+        canvas{
+            width:100% !important;
+            height:15em;
+        }
+    }
+    nav{
+        margin-bottom:0 !important;
+        @extend .col-md-10;
+        @extend .navbar;
+        border:none !important;
+        background:transparent !important;
+        button{
+            border:none !important;
+            background:$red !important;
+            .icon-bar{
+                background-color:white !important;
+            }
+        }
+        ul{
+            padding:2% !important;
+            @extend .nav;
+            @extend .navbar-nav;
+            @extend .navbar-right;
+            @extend .epsilon !optional;
+            @extend .navbar-collapse;
+            text-align: center;
+            a.active{
+                background: $red !important;
+                border-radius:2px;
+                color:white !important;
+            }
+            a{
+                padding: 5px 10px !important;
+                color:$black !important;
+                border-radius: 2px;
+            }
+            a:hover{
+                background: black !important;
+                color:white !important;
+            }
+        }
+    }
+}
+footer{
+    position: fixed;
+    width: 100%;
+    bottom:0;
+    margin:0 !important;
+    padding:0 5%;
+    background:$black;
+    color: white !important;
+    @extend .row;
+    border-top:5px solid $red;
+    nav{
+        background: transparent !important;
+        border:none !important;
+        margin-bottom: 0 !important;
+        button{
+            border:none !important;
+            background:$red !important;
+            .icon-bar{
+                background-color:white !important;
+            }
+        }
+    }
+    ul{
+        margin-top: 5px;
+        @extend .nav;
+        @extend .navbar-nav;
+        a{
+            color: white !important;
+            i{
+                padding-right:5px;
+            }
+            span{
+                margin-left:10px;
+            }
+        }
+        li.social{
+            margin-top:10px;
+            margin-left: 10px;
+            a{
+                padding:0 !important;
+                padding-top: 5px !important;
+                width:30px;
+                height:30px;
+                vertical-align: middle;
+                text-align: center;
+                background:red;
+                margin-left:5%;
+                i{
+                    padding:0 !important;
+                    margin-top:20px;
+                    font-size:1.4em;
+                }
+            }
+
+        }
+
+        a:hover{
+            background: none !important;
+            color:$red !important;
+        }
+    }
+}
+a.btn{
+    background: $black !important;
+    color:white !important;
+    border:none;
+}
+a.btn:hover{
+    color:$red !important;
+}
+//Color styles
+.red{
+    background: $red;
+    color:white;
+    width:auto;
+    padding:10px;
+    text-align:center;
+    margin-bottom:1em;
+}
+.black{
+    background: $black;
+    color:white;
+    width:auto;
+    padding:10px;
+    text-align:center;
+    margin-bottom:1em;
+}
+.tilt-left{
+    /* Rotate div */
+    -ms-transform: rotate(-2deg); /* IE 9 */
+    -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+    transform: rotate(-2deg);
+}
+.tilt-right{
+    /* Rotate div */
+    -ms-transform: rotate(2deg); /* IE 9 */
+    -webkit-transform: rotate(2deg); /* Chrome, Safari, Opera */
+    transform: rotate(2deg);
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 320px)  {
+
+    .red ,.black{
+        width:100% !important;
+    }
+    .tag-line{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .card{
+            img{
+                width:100% !important;
+            }
+        }
+
+        .inner{
+            text-align: center !important;
+        }
+    }
+    .full-page{
+        font-size:1.1rem;
+        height:auto !important;
+    }
+    #logo{
+        canvas{
+            width: 50% !important;
+            margin:auto !important;
+            height:25em !important;
+        }
+    }
+    .content{
+        height: auto !important;
+    }
+    header{
+        position:relative;
+    }
+
+    #about,#how,#benefits,#requirements,#testimonials{
+        background: #ffffff;
+    }
+    h6{
+        padding-top:0.5em;
+        border-top:$red 2px solid;
+        width:100% !important;
+        font-size: 2rem;
+    }
+}
+.navbar-brand{
+    color:$red !important;
+
+}
+
+// Bootstrap Overrides
+.modal{
+    opacity:0.95 !important;
+    p{
+        text-align: center;
+    }
+}
+.modal-header, .modal-footer{
+    border-radius:0 !important;
+}
+.form-control:focus{
+    box-shadow: 0 0 1px $red;
+    border-color: $red;
+}
+a.red,h5.red{
+    background:none;
+    color:$red;
+}

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img class="img-responsive" href="#" style="width:120px;padding:0" src="assets/images/Buymore-Logo-Transparent.png" alt="">
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <h5>The Buymore Card</h5>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+    $(document).ready(function(){
+
+        var canvas = $("#canvas_logo");
+        console.log(canvas);
+        if(canvas.getContext)
+        {
+            var ctx = canvas.getContext("2d");
+            // Draw triangle
+            ctx.fillStyle="#e62020";
+            ctx.beginPath();
+            // Draw a triangle location for each corner from x:y 100,110 -> 200,10 -> 300,110 (it will return to first point)
+            ctx.moveTo(0,0);
+            ctx.lineTo(300,0);
+            ctx.lineTo(300,90);
+            ctx.lineTo(150,120);
+            ctx.lineTo(0,90);
+            ctx.closePath();
+            ctx.fill();
+            var image = new Image();
+            image.onload = function() {
+                ctx.drawImage(image, 20, 10,260,100);
+            };
+            image.src='assets/images/Buymore-Logo.png';
+        }
+
+    });
+</script>
