@@ -5,10 +5,16 @@
   <div class="row" style="margin-top:5%">
     <div class="col-md-12">
       <form action="">
-        <div class="form-group col-md-10">
-          <input type="text" class="form-control" placeholder="Enter Your Email Address Here">
+        <div class="form-group col-md-5">
+          <input type="text" class="form-control" placeholder="Enter Your Name Here" ng-model="ambassador.name">
         </div>
-        <a type="button" class="red col-md-2 btn btn-success btn-sm" ng-click="">Sign Up for Newsletter</a>
+        <div class="form-group col-md-5">
+          <input type="text" class="form-control" placeholder="Enter Your Email Address Here" ng-model="ambassador.email">
+        </div>
+        <a type="button" class="red col-md-2 btn btn-success btn-sm" ng-click="signup(ambassador)">Sign Up for Newsletter</a>
+        <div class="col-md-12" id="alerts">
+
+        </div>
       </form>
     </div>
   </div>

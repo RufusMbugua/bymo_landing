@@ -119,6 +119,8 @@ header{
   width:100%;
   height:15%;
   color: black !important;
+  background:white;
+  z-index:100;
   @extend .row;
   border-bottom:5px solid $red;
   position: fixed;

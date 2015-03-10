@@ -1,73 +1,81 @@
-var app = angular.module("buymore", ['ui.router','restangular','smart-table','chart.js','textAngular','angularMoment','mgcrea.ngStrap']);
+var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
+  'chart.js', 'textAngular', 'angularMoment', 'mgcrea.ngStrap'
+]);
 
 app.config(function(RestangularProvider) {
-  RestangularProvider.setBaseUrl('http://new.buymore.co.ke');
-//  RestangularProvider.setRequestSuffix('.json');
+  RestangularProvider.setBaseUrl('https://app.mailerlite.com/api/v1');
+  //  RestangularProvider.setRequestSuffix('.json');
 });
 
 
 app.run(['$http', '$rootScope', function($http, $rootScope) {
-     $rootScope.date = new Date();
-     $rootScope.title = 'Buymore Ambassador';
-     $rootScope.messages=[];
-     $rootScope.menu=[];
- }]);
+  $rootScope.date = new Date();
+  $rootScope.title = 'Buymore Ambassador';
+  $rootScope.messages = [];
+  $rootScope.menu = [];
+}]);
 ;// I control the main demo.
 app.controller(
-    "aboutCtrl", ['$scope', '$filter','$timeout','$state','$alert','Restangular','$http', function(scope, filter,timeout,state,alert,Restangular,$http) {
-        var Ambassador = Restangular.all('ambassador').all('register');
-        scope.getMember = function getMember(newMember) {
-            console.log(newMember);
-            scope.member = newMember;
-            state.go('members.view');
+  "homeCtrl", ['$scope', '$filter', '$timeout', '$state', '$alert',
+    'Restangular', '$http',
+    function(scope, filter, timeout, state, alert, Restangular, $http) {
+      var MailingList = Restangular.all('subscribers').all('1724875');
+      scope.getMember = function getMember(newMember) {
+        console.log(newMember);
+        scope.member = newMember;
+        state.go('members.view');
+      };
+
+      scope.modal = {
+        "title": "Apply for BSA Program",
+        //            "content": "Hello Modal<br />This is a multiline message!"
+      };
+
+      scope.signup = function signup(ambassador) {
+        var alert_text;
+        var alert_type;
+        var alert_title;
+        var myAlert;
+        var ambassadorData = {
+          apiKey: 'dpIDCxwqM2WdOW73ygF5TODGPB3Cko4m',
+          email: ambassador.email,
+          name: ambassador.name
         };
-
-        scope.modal = {
-            "title": "Apply for BSA Program",
-            //            "content": "Hello Modal<br />This is a multiline message!"
-        };
-
-        scope.apply = function apply(ambassador){
-            var alert_text;
-            var alert_type;
-            var alert_title;
-            var myAlert;
-            var ambassadorData={tag:'buymore_bsa', member_identification:ambassador.info};
-            alert_title = "";
-            alert_text = "Please wait...";
-            alert_type = "warning";
-            myAlert = alert({title: alert_title, content: alert_text, placement: 'top', type: alert_type, show: true,container:"#alerts",dismissable:false,duration:100});
-
-//            $http.post('http://new.buymore.co.ke/ambassador/register',ambassadorData).
-//             success(function(data, status, headers, config) {
-//                alert_text = response;
-//                alert_type = "success";
-//                myAlert.hide();
-//                myAlert = alert({title: alert_title, content: alert_text, placement: 'top', type: alert_type, show: true,container:"#alerts"});
-//
-//            }).
-//            error(function(data, status, headers, config) {
-//                alert_title = "Error!";
-//                alert_text = "There was an error saving";
-//                alert_type = "danger";
-//                myAlert.hide();
-//                myAlert = alert({title: alert_title, content: alert_text, placement: 'top', type: alert_type, show: true,container:"#alerts"});
-//
-//            });
+        alert_title = "";
+        alert_text = "Please wait...";
+        alert_type = "warning";
+        myAlert = alert({
+          title: alert_title,
+          content: alert_text,
+          placement: 'top',
+          type: alert_type,
+          show: true,
+          container: "#alerts",
+          dismissable: false,
+          duration: 100
+        });
 
 
-            Ambassador.post(ambassadorData).then(function(response) {
-                alert_text = response;
-            }, function() {
-                alert_title = "Error!";
-                alert_text = "There was an error saving";
-                alert_type = "danger";
-                myAlert.hide();
-                myAlert = alert({title: alert_title, content: alert_text, placement: 'top', type: alert_type, show: true,container:"#alerts"});
+        MailingList.post(ambassadorData).then(function(response) {
+          alert_text = response;
+        }, function() {
+          alert_title = "Error!";
+          alert_text = "There was an error saving";
+          alert_type = "danger";
+          myAlert.hide();
+          myAlert = alert({
+            title: alert_title,
+            content: alert_text,
+            placement: 'top',
+            type: alert_type,
+            show: true,
+            container: "#alerts"
+          });
 
-            });
-        };
-    }]
+        });
+      };
+    }
+  ]
 );
 ;app.directive("header", function () {
     return {
@@ -225,10 +233,16 @@ angular.module("../app/partials/pages/home.html", []).run(["$templateCache", fun
     "  <div class=\"row\" style=\"margin-top:5%\">\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <form action=\"\">\n" +
-    "        <div class=\"form-group col-md-10\">\n" +
-    "          <input type=\"text\" class=\"form-control\" placeholder=\"Enter Your Email Address Here\">\n" +
+    "        <div class=\"form-group col-md-5\">\n" +
+    "          <input type=\"text\" class=\"form-control\" placeholder=\"Enter Your Name Here\" ng-model=\"ambassador.name\">\n" +
     "        </div>\n" +
-    "        <a type=\"button\" class=\"red col-md-2 btn btn-success btn-sm\" ng-click=\"\">Sign Up for Newsletter</a>\n" +
+    "        <div class=\"form-group col-md-5\">\n" +
+    "          <input type=\"text\" class=\"form-control\" placeholder=\"Enter Your Email Address Here\" ng-model=\"ambassador.email\">\n" +
+    "        </div>\n" +
+    "        <a type=\"button\" class=\"red col-md-2 btn btn-success btn-sm\" ng-click=\"signup(ambassador)\">Sign Up for Newsletter</a>\n" +
+    "        <div class=\"col-md-12\" id=\"alerts\">\n" +
+    "\n" +
+    "        </div>\n" +
     "      </form>\n" +
     "    </div>\n" +
     "  </div>\n" +

@@ -5779,6 +5779,8 @@ header {
   width: 100%;
   height: 15%;
   color: black !important;
+  background: white;
+  z-index: 100;
   border-bottom: 5px solid #e62020;
   position: fixed;
   z-index: 1; }
