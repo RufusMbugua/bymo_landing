@@ -159,10 +159,10 @@ angular.module("../app/partials/directives/footer.html", []).run(["$templateCach
     "                <li><a href=\"\">&copy;Buymore Limited</a></li>\n" +
     "                <li><a><i class=\"fa fa-phone\"></i>0725 788 168 </a></li>\n" +
     "                <li><a href=\"mailto:hello@buymorecard.com\"><i class=\"fa fa-envelope\"></i>hello@buymorecard.com</a></li>\n" +
-    "                <li class=\"social\"><a href=\"#\" ><i class=\"ion-social-twitter\"></i></a></li>\n" +
-    "                <li class=\"social\"><a href=\"#\" ><i class=\"ion-social-facebook\"></i></a></li>\n" +
-    "                <li class=\"social\"><a href=\"#\" ><i class=\"ion-social-instagram\"></i></a></li>\n" +
-    "                <li class=\"social\"><a href=\"#\" ><i class=\"ion-social-linkedin\"></i></a></li>\n" +
+    "                <li class=\"social\"><a href=\"https://twitter.com/BuymoreCard\" ><i class=\"ion-social-twitter\"></i></a></li>\n" +
+    "                <li class=\"social\"><a href=\"https://www.facebook.com/BuymoreKenya\" ><i class=\"ion-social-facebook\"></i></a></li>\n" +
+    "                <li class=\"social\"><a href=\"http://instagram.com/buymorecard\" ><i class=\"ion-social-instagram\"></i></a></li>\n" +
+    "                <li class=\"social\"><a href=\"http://ke.linkedin.com/company/buymore\" ><i class=\"ion-social-linkedin\"></i></a></li>\n" +
     "            </ul>\n" +
     "        </div><!-- /.navbar-collapse -->\n" +
     "    </div><!-- /.container-fluid -->\n" +
